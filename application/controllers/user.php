@@ -33,7 +33,11 @@ class User extends CI_Controller
 	}
 
 	function edit($user_id){
-
+		$this->load->model('user_model');
+		$user = $this->user_model->get_user($user_id);
+		$data = array();
+		$data['user'] = $user;
+		$this->load->view('edit', $data);
 	}
 }
 

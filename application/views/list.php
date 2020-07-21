@@ -40,12 +40,12 @@
 							<td><?php echo $user['name'] ?></td>
 							<td><?php echo $user['email'] ?></td>
 							<td>
-								<a href="<?php echo base_url() . 'index.php/user/edit' . $user['user_id'] ?>"
+								<a href="<?php echo base_url().'index.php/user/edit'.$user['user_id'];?>"
 								   class="btn btn-primary"><i class="fas fa-edit ">Edit</i></a>
 							</td>
 
 							<td>
-								<a href="<?php echo base_url() . 'index.php/user/delete' . $user['user_id'] ?>"
+								<a href="<?php echo base_url().'index.php/user/delete'.$user['user_id'];?>"
 								   class="btn btn-danger"><i class="fas fa-trash-alt ">Delete</i></a>
 							</td>
 						</tr>
