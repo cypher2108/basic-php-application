@@ -20,5 +20,10 @@ class User_model extends CI_Model
 		$this->db->update('users', $formArray); //UPDATE USERS SET NAME = ?, EMAIL = ? WHERE USER_ID = ?
 
 	}
+
+	function deleteUser($userId){
+		$this->db->where('user_id', $userId);
+		$this->db->delete('users'); //DELETE from users where user_id = ?
+	}
 }
 ?>
