@@ -10,9 +10,11 @@ class User_model extends CI_Model
 		return $users = $this->db->get('users')->result_array(); //SELECT * FROM USERS;
 	}
 
-	function get_user($user_id){
-		$this->db->where('user_id', $user_id);
+	function get_user($userId){
+		$this->db->where('user_id', $userId);
 		return $user = $this->db->get('users')->row_array();
 	}
+
+
 }
 ?>

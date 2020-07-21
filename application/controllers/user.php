@@ -2,6 +2,7 @@
 
 class User extends CI_Controller
 {
+
 	function index(){
 		$this->load->model('user_model');
 		$users = $this->user_model->all();
@@ -32,9 +33,9 @@ class User extends CI_Controller
 		}
 	}
 
-	function edit($user_id){
+	function edit($userId){
 		$this->load->model('user_model');
-		$user = $this->user_model->get_user($user_id);
+		$user = $this->user_model->get_user($userId);
 		$data = array();
 		$data['user'] = $user;
 		$this->load->view('edit', $data);
