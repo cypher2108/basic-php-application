@@ -38,7 +38,22 @@ class User extends CI_Controller
 		$user = $this->user_model->get_user($userId);
 		$data = array();
 		$data['user'] = $user;
-		$this->load->view('edit', $data);
+
+		$this->form_validation->set_rules('name', 'Name', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+
+		if ($this->form_validation->run() == false){
+			$this->load->view('edit', $data);
+		} else {
+			//update user record
+			$formArray = array();
+			$formArray['name'] = $this->input->post('name');
+			$formArray['email'] = $this->input->post('email');
+			$this->user_model->updateUser($userId, $formArray);
+			$this->session->set_flashdata('success', 'Record updated successfully!');
+			redirect(base_url().'index.php/user/index');
+		}
+
 	}
 }
 

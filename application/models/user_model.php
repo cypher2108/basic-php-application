@@ -15,6 +15,10 @@ class User_model extends CI_Model
 		return $user = $this->db->get('users')->row_array();
 	}
 
+	function updateUser($userId, $formArray){
+		$this->db->where('user_id', $userId);
+		$this->db->update('users', $formArray); //UPDATE USERS SET NAME = ?, EMAIL = ? WHERE USER_ID = ?
 
+	}
 }
 ?>

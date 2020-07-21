@@ -24,13 +24,13 @@
 				<div class="form-group">
 					<label>Name</label>
 					<input type="text" name="name" value="<?php echo set_value('name', $user['name']) ?>" class="form-control">
-					<?php //echo form_error('name'); ?>
+					<?php echo form_error('name'); ?>
 				</div>
 
 				<div class="form-group">
 					<label>Email</label>
 					<input type="text" name="email" value="<?php echo set_value('email', $user['email']) ?>" class="form-control">
-					<?php //echo form_error('email'); ?>
+					<?php echo form_error('email'); ?>
 				</div>
 
 				<div class="form-group">

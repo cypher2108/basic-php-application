@@ -17,6 +17,27 @@
 </div>
 
 <div class="container" style="padding-top: 12px;">
+	<div class="row">
+		<div class="col-md-12">
+			<?php
+			$success = $this->session->userdata('success');
+			if ($success != ""){
+				?>
+					<div class="alert alert-success"><?php echo $success?></div>
+			<?php
+			}
+			?>
+
+			<?php
+			$failure = $this->session->userdata('failure');
+			if ($failure != ""){
+				?>
+				<div class="alert alert-success"><?php echo $failure?></div>
+				<?php
+			}
+			?>
+		</div>
+	</div>
 	<div class="row ">
 		<div class="col-6" ><h3>View Users</h3></div>
 		<div class="col-6 text-right"><a href="<?php echo base_url().'index.php/user/create'; ?>" class="btn btn-primary">Create</a></div>
